@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1047839688057",
+    "firebase_url": "https://surveillance-1898.firebaseio.com",
+    "project_id": "surveillance-1898",
+    "storage_bucket": "surveillance-1898.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047839688057:android:a56987de3346ba65",
+        "android_client_info": {
+          "package_name": "com.example.surveillance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047839688057-mghgl5l70lp27bmvfdmuggfe6qesjrot.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.surveillance",
+            "certificate_hash": "e5415ed98d24f372f877e054896dea45252f2251"
+          }
+        },
+        {
+          "client_id": "1047839688057-r9u7uln89esfarapgs1tps7vp6s2ngm9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkGdGnTQ-HoTTQ_XMBSzjqTuv3hWkmmno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047839688057-r9u7uln89esfarapgs1tps7vp6s2ngm9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
