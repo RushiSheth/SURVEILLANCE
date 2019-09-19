@@ -76,6 +76,21 @@ public class AgentFragment extends Fragment {
                 holder.t1.setText(model.getName());
                 holder.t2.setText(model.getDesignation());
                 holder.t3.setText(model.getHb());
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getContext(), Agentinfo.class);
+                        Agent agent = getItem(position);
+                        intent.putExtra("name_text", agent.name);
+                        intent.putExtra("image_url", agent.image);
+                        intent.putExtra("info_text", agent.designation);
+                        intent.putExtra("health", agent.hb);
+                        intent.putExtra("bloodgroup", agent.bloodgroup);
+                        intent.putExtra("medical", agent.medical);
+                        startActivity(intent);
+
+                    }
+                });
 
 
             }

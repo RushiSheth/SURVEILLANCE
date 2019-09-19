@@ -1,14 +1,19 @@
 package com.example.surveillance;
 
 public class Agent {
-    private String name;
-    private String email;
-    private String image;
+    public String name;
+    public String email;
+    public String image;
+
+
+
+    public String bloodgroup;
+    public String medical;
 
     public Agent() {
     }
 
-    public Agent(String name, String email, String image, String hb, String designation) {
+    public Agent(String name, String email, String image, String hb, String designation, String bloodgroup, String medical) {
         this.name = name;
         this.email = email;
         this.image = image;
@@ -16,8 +21,8 @@ public class Agent {
         this.designation = designation;
     }
 
-    private String hb;
-    private String designation;
+    public String hb;
+    public String designation;
 
     public String getName() {
         return name;
@@ -57,5 +62,20 @@ public class Agent {
 
     public void setDesignation(String designation) {
         this.designation = designation;
+    }
+    public String getBloodgroup() {
+        return bloodgroup;
+    }
+
+    public void setBloodgroup(String bloodgroup) {
+        this.bloodgroup = bloodgroup;
+    }
+
+    public String getMedical() {
+        return medical;
+    }
+
+    public void setMedical(String medical) {
+        this.medical = medical;
     }
 }
