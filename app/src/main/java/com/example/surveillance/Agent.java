@@ -4,6 +4,25 @@ public class Agent {
     public String name;
     public String email;
     public String image;
+    public Double lat;
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLng() {
+        return lng;
+    }
+
+    public void setLng(Double lng) {
+        this.lng = lng;
+    }
+
+    public Double lng;
 
 
 
@@ -13,12 +32,16 @@ public class Agent {
     public Agent() {
     }
 
-    public Agent(String name, String email, String image, String hb, String designation, String bloodgroup, String medical) {
+    public Agent(String name, String email, String image, String hb, String designation, String bloodgroup, String medical,Double lat,Double lng) {
         this.name = name;
         this.email = email;
         this.image = image;
         this.hb = hb;
         this.designation = designation;
+        this.bloodgroup = bloodgroup;
+        this.medical = medical;
+        this.lat = lat;
+        this.lng = lng;
     }
 
     public String hb;

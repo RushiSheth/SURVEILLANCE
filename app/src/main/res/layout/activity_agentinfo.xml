@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Agentinfo">
     <LinearLayout
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -13,8 +14,8 @@
 
     <ImageView
         android:id="@+id/agentinfoimage"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="30dp"
         android:scaleType="fitStart"
         android:src="@drawable/proimage"/>
@@ -28,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/agentinfoimage"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="35dp"
             android:layout_toEndOf="@+id/agentinfoimage"
             android:fontFamily="@font/raleway_semibold"
@@ -40,13 +41,14 @@
                 android:id="@+id/agentdesignation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/agentinfoimage"
-                android:fontFamily="@font/raleway_light"
+                android:fontFamily="@font/raleway_medium"
                 android:text="COMMANDER"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="italic" />
     </LinearLayout>
     </LinearLayout>
     <View
@@ -54,7 +56,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
         android:layout_height="2dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="175dp"
         android:background="@color/colorPrimary"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,20 +74,20 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Health"
-                android:textSize="20sp"
-                android:layout_weight="2"/>
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/infohealth"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="72"
-                android:layout_weight="1"
                 android:textColor="@color/colorAccent"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
         <LinearLayout
@@ -98,20 +100,20 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Blood Group"
-                android:textSize="20sp"
-                android:layout_weight="2"/>
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/infobg"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="B+ve"
                 android:textColor="@color/colorAccent"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
         <LinearLayout
@@ -124,20 +126,20 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Medical History"
-                android:textSize="20sp"
-                android:layout_weight="2"/>
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/infomedical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Asthma"
                 android:textColor="@color/colorAccent"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -149,12 +151,12 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/button"
             android:drawableLeft="@drawable/ic_share_black_24dp"
+            android:fontFamily="@font/raleway_semibold"
             android:paddingLeft="20dp"
             android:paddingRight="15dp"
-            android:fontFamily="@font/raleway_semibold"
             android:text="Share"
             android:textColor="#ffffff"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 

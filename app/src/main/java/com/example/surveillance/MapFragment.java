@@ -2,6 +2,7 @@ package com.example.surveillance;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -22,15 +23,21 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class MapFragment extends Fragment implements OnMapReadyCallback {
-    private static final LatLng MORRIS = new LatLng(22.552839, 72.923714);
-    private static final LatLng JOHNSON = new LatLng(22.552843, 72.923042);
-
-
-    private Marker mPerth;
-    private Marker mSydney;
-    private Marker mBrisbane;
+    DatabaseReference db;
+    View v;
+    private static  LatLng MORRIS;
+    private static  LatLng JOHNSON;
+    private Marker mMorris;
+    private Marker mJohnson;
     GoogleMap mMap;
     SupportMapFragment mapFragment;
     public  MapFragment(){}
@@ -49,6 +56,50 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
         return v;
     }
+    @Override
+    public void onViewCreated(View view, Bundle savedInstancestate) {
+        super.onViewCreated(view, savedInstancestate);
+        this.v = view;
+        db = FirebaseDatabase.getInstance().getReference().child("agent");
+        Query query = db.orderByChild("email").equalTo("morris@gmail.com");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChildren()) {
+                    for (DataSnapshot des : dataSnapshot.getChildren()) {
+                        final Agent hes = des.getValue(Agent.class);
+                        MORRIS = new LatLng(hes.getLat(),hes.getLng());
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        Query que = db.orderByChild("email").equalTo("johnson@gmail.com");
+        que.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChildren()) {
+                    for (DataSnapshot des : dataSnapshot.getChildren()) {
+                        final Agent hes = des.getValue(Agent.class);
+                        JOHNSON = new LatLng(hes.getLat(),hes.getLng());
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -66,15 +117,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         } catch (Resources.NotFoundException e) {
             Log.e("Bottomnav", "Can't find style. Error: ", e);
         }
-        mPerth = mMap.addMarker(new MarkerOptions()
+        mMorris = mMap.addMarker(new MarkerOptions()
                 .position(MORRIS)
                 .title("Agent Morris").snippet("Commander"));
-        mPerth.setTag(0);
+        mMorris.setTag(0);
 
-        mSydney = mMap.addMarker(new MarkerOptions()
+        mJohnson = mMap.addMarker(new MarkerOptions()
                 .position(JOHNSON)
                 .title("Agent Jhonson").snippet("Patrol Officer"));
-        mSydney.setTag(0);
+        mJohnson.setTag(0);
         float zoomLevel = 16.0f;
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(MORRIS,zoomLevel));
     }

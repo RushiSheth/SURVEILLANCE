@@ -1,9 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+       android:background="#5D1049"/>
+    <ImageView
+        android:id="@+id/profileimage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/proimage"/>
+
     <TextView
+        android:id="@+id/profilename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="profile"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="145dp"
+        android:layout_toEndOf="@id/profileimage"
+        android:fontFamily="@font/raleway_semibold"
+        android:text="AGENT MORRIS"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/profiledesg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profilename"
+        android:layout_marginLeft="159dp"
+        android:fontFamily="@font/raleway_medium"
+        android:text="COMMANDER"
+        android:textColor="#ffffff"
+        android:textStyle="italic" />
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="59dp"
+            android:layout_marginRight="59dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Heart Beat"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/profilehb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="72"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="59dp"
+            android:layout_marginRight="59dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Blood Group"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/profilebg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/raleway_light"
+                android:text="B+ve"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="59dp"
+            android:layout_marginRight="59dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Medical History"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/profilemedical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/raleway_light"
+                android:text="Asthama"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:drawableLeft="@drawable/ic_phonelink_off_black_24dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@drawable/button2"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="LOGOUT"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </RelativeLayout>
